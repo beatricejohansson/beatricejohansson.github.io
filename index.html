@@ -1,74 +1,233 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>Beatrice Johansson – Statistik</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beatrice Johansson – Statistik & Dataanalys</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      background-color: #f7f9fb;
-      color: #1a1a1a;
-      line-height: 1.6;
+    :root{
+      --bg:#0b1020;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#f3f4f6;
+      --muted:rgba(243,244,246,.72);
+      --accent:#7c3aed;
+      --accent2:#22c55e;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --r:18px;
     }
-    .container {
-      max-width: 800px;
-      margin: 80px auto;
-      padding: 0 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.22), transparent 55%),
+        var(--bg);
+      line-height:1.6;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    .wrap{max-width:980px;margin:0 auto;padding:30px 18px 70px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0 24px;
     }
-    h2 {
-      margin-top: 40px;
+    .logo{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px
     }
-    .subtitle {
-      color: #666;
-      margin-bottom: 40px;
+    .mark{
+      width:11px;height:11px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 0 6px rgba(255,255,255,.06);
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:8px 12px;border-radius:999px;
+      font-weight:700;
     }
-    a {
-      text-decoration: none;
-      color: #0066cc;
+    nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+    .hero{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border-radius:24px;
+      padding:34px 22px;
+      box-shadow:var(--shadow);
     }
-    a:hover {
-      text-decoration: underline;
+    h1{
+      margin:0;
+      font-size:clamp(2.0rem, 4.3vw, 3.1rem);
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+    .subtitle{margin:12px 0 0;color:var(--muted);max-width:70ch;font-weight:600}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      border-radius:12px;
+      padding:11px 14px;
+      text-decoration:none;
+      font-weight:900;
+      border:1px solid var(--line);
+      color:var(--text);
+      background:rgba(255,255,255,.04);
+    }
+    .btn.primary{
+      border:none;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#071018;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+    .card{
+      grid-column:span 12;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--r);
+      padding:18px 16px;
+    }
+    .card h2{margin:0 0 6px;font-size:1.05rem;letter-spacing:-.01em}
+    .card p{margin:0;color:var(--muted);font-weight:600}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .pill{
+      font-size:.9rem;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.12);
+      color:rgba(255,255,255,.86);
+      font-weight:800;
+    }
+    section{margin-top:30px}
+    .sectiontitle{margin:0 0 10px;font-size:1.05rem;color:rgba(255,255,255,.9);letter-spacing:.02em}
+    .smalllink a{color:rgba(255,255,255,.86);text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.25)}
+    .smalllink a:hover{border-bottom-color:rgba(255,255,255,.55)}
+    @media (min-width: 780px){
+      .card.span7{grid-column:span 7}
+      .card.span5{grid-column:span 5}
+      .card.span6{grid-column:span 6}
+    }
+    footer{
+      margin-top:36px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color:rgba(243,244,246,.62);
+      font-weight:700;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Beatrice Johansson</h1>
-    <p class="subtitle">Statistik • Dataanalys • Modellering</p>
+  <div class="wrap">
+    <header>
+      <div class="logo"><span class="mark"></span><span>Beatrice Johansson</span></div>
+      <nav>
+        <a href="#projekt">Projekt</a>
+        <a href="#om">Om</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
 
-    <div class="card">
-      <h2>Om mig</h2>
-      <p>
-        Jag studerar statistik och är särskilt intresserad av regression,
-        sannolikhetsteori och tillämpad dataanalys.
+    <div class="hero">
+      <h1>Statistik & dataanalys med fokus på tydlig tolkning.</h1>
+      <p class="subtitle">
+        Jag bygger modeller, utvärderar dem på riktigt (inte bara accuracy 😄) och gillar när statistik blir begriplig.
+        Här samlar jag projekt och lärdomar.
       </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#projekt">Se projekt</a>
+        <a class="btn" href="https://github.com/beatricejohansson" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Projekt</h2>
-      <p>Kommande projekt inom logistisk regression, simulering och modellutvärdering.</p>
-    </div>
+    <section id="projekt">
+      <p class="sectiontitle">Utvalda saker</p>
+      <div class="grid">
+        <div class="card span7">
+          <h2>⭐ Featured project (lägg in när du har ett)</h2>
+          <p>
+            Exempel: logistisk regression – data → modell → tolkning → slutsats. Länka till repo eller rapport.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Logistisk regression</span>
+            <span class="pill">ROC/AUC</span>
+            <span class="pill">Kalibrering</span>
+          </div>
+        </div>
 
-    <div class="card">
-      <h2>Kontakt</h2>
-      <p>
-        GitHub: <a href="https://github.com/beatricejohansson">github.com/beatricejohansson</a>
-      </p>
-    </div>
+        <div class="card span5">
+          <h2>Nuvarande fokus</h2>
+          <p>
+            Modellutvärdering, simulering och att skriva resultat så att någon annan faktiskt kan använda dem.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Cross-validation</span>
+            <span class="pill">Simulering</span>
+          </div>
+        </div>
 
+        <div class="card span6">
+          <h2>Projektidéer</h2>
+          <p>
+            • Modellval (AIC/BIC vs CV)<br/>
+            • Power-simuleringar<br/>
+            • Tolkning av oddskvoter & interaktioner
+          </p>
+        </div>
+
+        <div class="card span6">
+          <h2>Anteckningar / blogg</h2>
+          <p>
+            Jag skriver korta inlägg om det jag lär mig. (Vi kan göra en riktig blogg-sida sen.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="om">
+      <p class="sectiontitle">Om</p>
+      <div class="grid">
+        <div class="card">
+          <h2>Hej!</h2>
+          <p>
+            Jag studerar statistik och gillar regression, sannolikhet och applied dataanalys. Jag gillar när saker är
+            tydliga, reproducerbara och snyggt kommunicerade.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <p class="sectiontitle">Kontakt</p>
+      <div class="grid">
+        <div class="card">
+          <h2>Hitta mig</h2>
+          <p class="smalllink">
+            GitHub: <a href="https://github.com/beatricejohansson" target="_blank" rel="noreferrer">github.com/beatricejohansson</a>
+            <br/>
+            (Vill du ha e-post här senare kan vi lägga till det utan att doxxa dig.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Beatrice Johansson</div>
+      <div>beatricejohansson.github.io</div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
