@@ -6,15 +6,15 @@
   <title>Beatrice Johansson – Statistik & Dataanalys</title>
   <style>
 :root{
-  --bg:#eaf2fb;          /* mjuk mellanblå bakgrund */
+  --bg:#f4f8f6;           /* mjuk kall grågrön */
   --card:#ffffff;
-  --line:#d6e2f3;
-  --text:#0f172a;
-  --muted:#475569;
-  --accent:#3b82f6;      /* klar men lugn blå */
-  --accent2:#93c5fd;
-  --shadow:0 12px 35px rgba(59,130,246,.08);
-  --r:18px;
+  --line:#e3ece8;
+  --text:#1f2937;
+  --muted:#5f6f6a;
+  --accent:#2f6f4e;       /* dämpad fotbollsgrön */
+  --accent-soft:#cfe5db;
+  --shadow:0 15px 35px rgba(47,111,78,.08);
+  --r:20px;
 }
     *{box-sizing:border-box}
     body{
@@ -119,6 +119,71 @@
       font-weight:700;
       display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     }
+.hero{
+  background: var(--accent-soft);
+  border-radius: 28px;
+  padding: 50px 40px;
+  box-shadow: var(--shadow);
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  max-width:550px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:2.4rem;
+  line-height:1.2;
+}
+
+.subtitle{
+  margin-top:15px;
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.circle{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.5rem;
+  box-shadow: var(--shadow);
+}
+
+.btn{
+  padding:10px 16px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  font-weight:600;
+  margin-right:10px;
+  background:white;
+  color:var(--text);
+}
+
+.btn.primary{
+  background:var(--accent);
+  color:white;
+  border:none;
+}
   </style>
 </head>
 <body>
@@ -132,17 +197,29 @@
       </nav>
     </header>
 
-    <div class="hero">
-      <h1>Statistikdriven dataanalys och modellutveckling.</h1>
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Statistikdriven dataanalys med tillämpningar inom sport.</h1>
       <p class="subtitle">
-        Jag kombinerar teori och programmering för att utveckla och analysera modeller med fokus på metodval, utvärdering och tolkning.
+        Jag utvecklar och utvärderar statistiska modeller med fokus på metodval,
+        tolkning och programmeringsbaserad analys – med särskilt intresse för
+        prestationsdata inom fotboll.
       </p>
 
       <div class="cta">
         <a class="btn primary" href="#projekt">Se projekt</a>
-        <a class="btn" href="https://github.com/beatricejohansson" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://github.com/beatricejohansson" target="_blank">GitHub</a>
       </div>
     </div>
+
+    <div class="hero-visual">
+      <div class="circle">
+        ⚽
+      </div>
+    </div>
+  </div>
+</div>
 
     <section id="projekt">
       <p class="sectiontitle">Utvalda saker</p>
