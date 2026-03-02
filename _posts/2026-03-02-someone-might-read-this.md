@@ -15,7 +15,7 @@ What if someone who knows much more than I do reads this?
 Writing openly about things I find interesting feels personal.  
 Maybe even more than that — it feels uncomfortable to write about things I don’t fully understand yet, or things I’ve only just begun to learn.
 
-When you’re still figuring things out, putting your thoughts into words makes them feel more exposed.
+When you’re still figuring things out, putting your thoughts into words can make them feel more exposed.
 
 I’m not sure I’m comfortable with that yet.
 
