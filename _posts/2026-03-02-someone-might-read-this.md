@@ -13,9 +13,9 @@ What if someone I admire finds their way here?
 What if someone who knows much more than I do reads this?
 
 Writing openly about things I find interesting feels personal.  
-Maybe even more than that — it feels uncomfortable to write about things I don’t fully understand yet, or things I’ve only just started learning.
+Maybe even more than that — it feels uncomfortable to write about things I don’t fully understand yet, or things I’ve only just began to learn.
 
-There’s something exposing about saying, “This is what I think,” when you’re still figuring things out.
+When you’re still figuring things out, putting your thoughts into words makes them feel more exposed.
 
 I’m not sure I’m comfortable with that yet.
 
