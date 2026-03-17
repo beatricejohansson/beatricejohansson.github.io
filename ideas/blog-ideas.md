@@ -15,6 +15,7 @@
 - curiosity
 
 ## links
+- https://hietalai.github.io/statistics-in-r/
 - https://www.taniarascia.com
 - https://lea.verou.me/
 - https://una.im/
